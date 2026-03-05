@@ -8,11 +8,7 @@ CONFIG_FILE="configs/vit/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py
 
 # List of your converted _mmseg.pth models
 declare -a models=(
-    "pretrained/manifold_model/checkpoint_epoch_300_mmseg.pth"
-    "pretrained/cosine_model/checkpoint_epoch_300_mmseg.pth"
-    "pretrained/cosine_multiple_layers/checkpoint_epoch_300_mmseg.pth"
-    "pretrained/gaussian_model/checkpoint_epoch_300_mmseg.pth"
-    #"pretrained/cosine_intra/checkpoint_epoch_300_mmseg.pth"
+    "pretrained/gaussian_orth_prjct_model/checkpoint_epoch_300_mmseg.pth"
 )
 
 # Loop through the array and train each model sequentially

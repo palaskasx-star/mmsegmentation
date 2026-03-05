@@ -10,6 +10,7 @@ declare -a models=(
     "pretrained/cosine_intra/checkpoint_epoch_300.pth"
     "pretrained/cosine_multiple_layers/checkpoint_epoch_300.pth"
     "pretrained/gaussian_model/checkpoint_epoch_300.pth"
+    "pretrained/gaussian_orth_prjct_model/checkpoint_epoch_300.pth"
 )
 
 # Loop through the array and convert each model
