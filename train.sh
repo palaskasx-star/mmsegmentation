@@ -13,9 +13,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/manifold/Deit3Small_t_DeitTiny_s/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
         
 # 3. ViT Gaussian Kernel (Tiny)
 bash tools/dist_train.sh \
@@ -26,9 +26,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \    
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \    
+        val_dataloader.num_workers=25
 
 # 9. ViT Cosine Kernel (Tiny)
 bash tools/dist_train.sh \
@@ -39,9 +39,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
 
 # 2. ViT Manifold (Small)
 bash tools/dist_train.sh \
@@ -52,9 +52,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/manifold/Deit3Base_t_DeitSmall_s/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
 
 # 4. ViT Gaussian Kernel (Small)
 bash tools/dist_train.sh \
@@ -65,9 +65,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \    
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \    
+        val_dataloader.num_workers=25
 
 
 # 10. ViT Cosine Kernel (Small)
@@ -79,9 +79,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \    
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \    
+        val_dataloader.num_workers=25
 
 # 5. ViT Distillation Experiments (Tiny)
 bash tools/dist_train.sh \
@@ -92,9 +92,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/distillation_experiments/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
 
 # 6. ViT Distillation Experiments (Small)
 bash tools/dist_train.sh \
@@ -105,9 +105,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/distillation_experiments/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
 
 # 7. ViT DeiT Experiments (Tiny)
 bash tools/dist_train.sh \
@@ -118,9 +118,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/deit_experiments/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
 
 # 8. ViT DeiT Experiments (Small)
 bash tools/dist_train.sh \
@@ -131,9 +131,9 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/deit_experiments/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
-            randomness.seed=42 \     
-            train_dataloader.num_workers=25 \     
-            val_dataloader.num_workers=25
+        randomness.seed=42 \     
+        train_dataloader.num_workers=25 \     
+        val_dataloader.num_workers=25
 
 # ==========================================
 # DinoV3 (EVA) Architecture Models
