@@ -14,6 +14,28 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/manifold/Deit3Small_t_DeitTiny_s/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
         randomness.seed=42
+        
+# 3. ViT Gaussian Kernel (Tiny)
+bash tools/dist_train.sh \
+    ./configs/vit/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/vit_architecture/gaussian_kernel/tiny \
+    --cfg-options \
+        model.backbone.init_cfg.type="Pretrained" \
+        model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
+        train_dataloader.batch_size=4 \
+        randomness.seed=42
+
+# 9. ViT Cosine Kernel (Tiny)
+bash tools/dist_train.sh \
+    ./configs/vit/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/vit_architecture/cosine_kernel/tiny \
+    --cfg-options \
+        model.backbone.init_cfg.type="Pretrained" \
+        model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
+        train_dataloader.batch_size=4 \
+        randomness.seed=42
 
 # 2. ViT Manifold (Small)
 bash tools/dist_train.sh \
@@ -23,17 +45,6 @@ bash tools/dist_train.sh \
     --cfg-options \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/manifold/Deit3Base_t_DeitSmall_s/checkpoint_epoch_300_mmseg.pth" \
-        train_dataloader.batch_size=4 \
-        randomness.seed=42
-
-# 3. ViT Gaussian Kernel (Tiny)
-bash tools/dist_train.sh \
-    ./configs/vit/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
-    4 \
-    --work-dir ../pretrained_models/models/vit_architecture/gaussian_kernel/tiny \
-    --cfg-options \
-        model.backbone.init_cfg.type="Pretrained" \
-        model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
         randomness.seed=42
 
@@ -47,16 +58,7 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
         randomness.seed=42
-# 9. ViT Cosine Kernel (Tiny)
-bash tools/dist_train.sh \
-    ./configs/vit/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
-    4 \
-    --work-dir ../pretrained_models/models/vit_architecture/cosine_kernel/tiny \
-    --cfg-options \
-        model.backbone.init_cfg.type="Pretrained" \
-        model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
-        train_dataloader.batch_size=4 \
-        randomness.seed=42
+
 
 # 10. ViT Cosine Kernel (Small)
 bash tools/dist_train.sh \
