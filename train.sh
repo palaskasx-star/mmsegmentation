@@ -10,6 +10,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/manifold/Deit3Small_t_DeitTiny_s \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/manifold/Deit3Small_t_DeitTiny_s/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -23,6 +24,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/gaussian_kernel/tiny \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -36,6 +38,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/cosine_kernel/tiny \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -90,6 +93,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/manifold/Deit3Base_t_DeitSmall_s \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/manifold/Deit3Base_t_DeitSmall_s/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -103,6 +107,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/gaussian_kernel/small \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/gaussian_kernel/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -117,6 +122,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/cosine_kernel/small \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -130,6 +136,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/distillation_experiments/tiny \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/distillation_experiments/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -143,6 +150,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/distillation_experiments/small \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/distillation_experiments/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -156,6 +164,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/deit_experiments/tiny \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/deit_experiments/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
@@ -169,6 +178,7 @@ bash tools/dist_train.sh \
     4 \
     --work-dir ../pretrained_models/models/vit_architecture/deit_experiments/small \
     --cfg-options \
+        model.pretrained=None \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/deit_experiments/small/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
