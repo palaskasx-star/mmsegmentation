@@ -3,7 +3,7 @@
 # ==========================================
 # ViT (DeiT) Architecture Models
 # ==========================================
-
+: <<'COMMENT'
 # 1. ViT Manifold (Tiny)
 bash tools/dist_train.sh \
     ./configs/vit/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
@@ -39,6 +39,47 @@ bash tools/dist_train.sh \
         model.backbone.init_cfg.type="Pretrained" \
         model.backbone.init_cfg.checkpoint="../pretrained_models/models/vit_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth" \
         train_dataloader.batch_size=4 \
+        randomness.seed=42 \
+        train_dataloader.num_workers=25 \
+        val_dataloader.num_workers=25
+COMMENT
+
+# 15. DinoV3 Gaussian Kernel (Tiny)
+bash tools/dist_train.sh \
+    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/dinov3_architecture/gaussian_kernel/tiny \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/gaussian_kernel/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
+        randomness.seed=42 \
+        train_dataloader.num_workers=25 \
+        val_dataloader.num_workers=25
+
+# 11. DinoV3 Without Teacher (Tiny)
+bash tools/dist_train.sh \
+    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/dinov3_architecture/without_teacher/tiny \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/without_teacher/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
+        randomness.seed=42 \
+        train_dataloader.num_workers=25 \
+        val_dataloader.num_workers=25
+
+# 13. DinoV3 Manifold (Tiny)
+bash tools/dist_train.sh \
+    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/dinov3_architecture/manifold/Dinov3Small_t_Dinov3Tiny_s \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/manifold/Dinov3Small_t_Dinov3Tiny_s/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
+        randomness.seed=42 \
+        train_dataloader.num_workers=25 \
+        val_dataloader.num_workers=25
+
+# 17. DinoV3 Cosine Kernel (Tiny)
+bash tools/dist_train.sh \
+    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/dinov3_architecture/cosine_kernel/tiny \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
         randomness.seed=42 \
         train_dataloader.num_workers=25 \
         val_dataloader.num_workers=25
@@ -138,46 +179,6 @@ bash tools/dist_train.sh \
 # ==========================================
 # DinoV3 (EVA) Architecture Models
 # ==========================================
-
-# 11. DinoV3 Without Teacher (Tiny)
-bash tools/dist_train.sh \
-    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
-    4 \
-    --work-dir ../pretrained_models/models/dinov3_architecture/without_teacher/tiny \
-    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/without_teacher/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
-        randomness.seed=42 \
-        train_dataloader.num_workers=25 \
-        val_dataloader.num_workers=25
-
-# 13. DinoV3 Manifold (Tiny)
-bash tools/dist_train.sh \
-    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
-    4 \
-    --work-dir ../pretrained_models/models/dinov3_architecture/manifold/Dinov3Small_t_Dinov3Tiny_s \
-    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/manifold/Dinov3Small_t_Dinov3Tiny_s/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
-        randomness.seed=42 \
-        train_dataloader.num_workers=25 \
-        val_dataloader.num_workers=25
-
-# 15. DinoV3 Gaussian Kernel (Tiny)
-bash tools/dist_train.sh \
-    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
-    4 \
-    --work-dir ../pretrained_models/models/dinov3_architecture/gaussian_kernel/tiny \
-    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/gaussian_kernel/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
-        randomness.seed=42 \
-        train_dataloader.num_workers=25 \
-        val_dataloader.num_workers=25
-
-# 17. DinoV3 Cosine Kernel (Tiny)
-bash tools/dist_train.sh \
-    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
-    4 \
-    --work-dir ../pretrained_models/models/dinov3_architecture/cosine_kernel/tiny \
-    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/cosine_kernel/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
-        randomness.seed=42 \
-        train_dataloader.num_workers=25 \
-        val_dataloader.num_workers=25
 
 # 12. DinoV3 Without Teacher (Small)
 bash tools/dist_train.sh \
