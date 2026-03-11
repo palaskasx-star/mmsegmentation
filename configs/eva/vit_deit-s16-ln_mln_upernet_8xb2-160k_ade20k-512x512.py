@@ -34,10 +34,8 @@ model = dict(
 test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='Resize', scale=(2048, 512), keep_ratio=True),
-    # Load annotations before padding so the ground truth mask gets padded too
+    dict(type='Pad', size_divisor=16, pad_val=dict(img=0)),
     dict(type='LoadAnnotations', reduce_zero_label=True),
-    # Pad both image and mask to be divisible by 16
-    dict(type='Pad', size_divisor=16, pad_val=dict(img=0, seg=255)),
     dict(type='PackSegInputs')
 ]
 
