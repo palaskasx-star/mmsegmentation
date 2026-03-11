@@ -41,4 +41,4 @@ test_pipeline = [
 
 # Apply the patched pipeline to validation and testing
 val_dataloader = dict(dataset=dict(pipeline=test_pipeline))
-test_dataloader = dict(dataset=dict(pipeline=test_pipeline))))
+test_dataloader = dict(dataset=dict(pipeline=test_pipeline))
