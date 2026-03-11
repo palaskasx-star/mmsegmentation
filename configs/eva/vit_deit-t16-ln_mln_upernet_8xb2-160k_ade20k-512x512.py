@@ -35,10 +35,10 @@ test_pipeline = [
     # Load annotations before padding so the ground truth mask gets padded too
     dict(type='LoadAnnotations', reduce_zero_label=True),
     # Pad both image and mask to be divisible by 16
-    dict(type='Pad', size_divisor=16, pad_val=0, seg_pad_val=255),
+    dict(type='Pad', size_divisor=16, pad_val=dict(img=0, seg=255)),
     dict(type='PackSegInputs')
 ]
 
 # Apply the patched pipeline to validation and testing
 val_dataloader = dict(dataset=dict(pipeline=test_pipeline))
-test_dataloader = dict(dataset=dict(pipeline=test_pipeline))
+test_dataloader = dict(dataset=dict(pipeline=test_pipeline))))
