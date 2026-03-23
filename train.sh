@@ -86,7 +86,6 @@ bash tools/dist_train.sh \
         randomness.seed=42 \
         train_dataloader.num_workers=25 \
         val_dataloader.num_workers=25
-COMMENT
 
 
 # 12. DinoV3 Without Teacher (Small)
@@ -159,7 +158,27 @@ bash tools/dist_train.sh \
         randomness.seed=42 \
         train_dataloader.num_workers=25 \
         val_dataloader.num_workers=25
+COMMENT
 
+# 19. DinoV3 PKT Intra (Tiny)
+bash tools/dist_train.sh \
+    ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/dinov3_architecture/PKT_intra/tiny \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/PKT_intra/tiny/checkpoint_epoch_300.pth train_dataloader.batch_size=4 \
+        randomness.seed=42 \
+        train_dataloader.num_workers=25 \
+        val_dataloader.num_workers=25
+
+# 20. DinoV3 PKT Intra (Small)
+bash tools/dist_train.sh \
+    ./configs/eva/vit_deit-s16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
+    4 \
+    --work-dir ../pretrained_models/models/dinov3_architecture/PKT_intra/small \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/PKT_intra/small/checkpoint_epoch_300.pth train_dataloader.batch_size=4 \
+        randomness.seed=42 \
+        train_dataloader.num_workers=25 \
+        val_dataloader.num_workers=25
 
 # 10. ViT Cosine Kernel (Small)
 bash tools/dist_train.sh \
