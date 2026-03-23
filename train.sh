@@ -165,7 +165,7 @@ bash tools/dist_train.sh \
     ./configs/eva/vit_deit-t16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
     4 \
     --work-dir ../pretrained_models/models/dinov3_architecture/PKT_intra/tiny \
-    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/PKT_intra/tiny/checkpoint_epoch_300.pth train_dataloader.batch_size=4 \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/PKT_intra/tiny/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
         randomness.seed=42 \
         train_dataloader.num_workers=25 \
         val_dataloader.num_workers=25
@@ -175,7 +175,7 @@ bash tools/dist_train.sh \
     ./configs/eva/vit_deit-s16-ln_mln_upernet_8xb2-160k_ade20k-512x512.py \
     4 \
     --work-dir ../pretrained_models/models/dinov3_architecture/PKT_intra/small \
-    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/PKT_intra/small/checkpoint_epoch_300.pth train_dataloader.batch_size=4 \
+    --cfg-options model.backbone.checkpoint_path=../pretrained_models/models/dinov3_architecture/PKT_intra/small/checkpoint_epoch_300_mmseg.pth train_dataloader.batch_size=4 \
         randomness.seed=42 \
         train_dataloader.num_workers=25 \
         val_dataloader.num_workers=25
